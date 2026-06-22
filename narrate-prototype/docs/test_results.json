@@ -1,0 +1,80 @@
+{
+  "tests_executed": 5,
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "attack_scenarios": [],
+  "detailed_results": [
+    {
+      "test_name": "Hash Collision Resistance",
+      "passed": true,
+      "hashes_generated": 1000,
+      "collisions_found": 0,
+      "duration_seconds": 0.002,
+      "hash_rate": 593085.97
+    },
+    {
+      "test_name": "Data Tampering Detection",
+      "passed": true,
+      "attack_scenarios": 4,
+      "detected": 4,
+      "detection_rate": 100.0
+    },
+    {
+      "test_name": "Chain Integrity Attack",
+      "passed": true,
+      "attacks_tested": 3,
+      "attacks_detected": 3,
+      "chain_valid_before": true,
+      "attack_details": [
+        {
+          "attack": "Modification bloc milieu",
+          "detected": true
+        },
+        {
+          "attack": "Modification hash",
+          "detected": true
+        },
+        {
+          "attack": "Rupture lien chaîne",
+          "detected": true
+        }
+      ]
+    },
+    {
+      "test_name": "Signature Forgery Resistance",
+      "passed": true,
+      "forgery_attempts": 4,
+      "detected": 4,
+      "algorithm": "ECDSA-SECP256R1"
+    },
+    {
+      "test_name": "Performance Comparison",
+      "passed": true,
+      "iterations": 100,
+      "hashing": {
+        "sha256": {
+          "duration": 0.0,
+          "ops_per_sec": Infinity
+        },
+        "sha3_256": {
+          "duration": 0.003,
+          "ops_per_sec": 33879.68
+        },
+        "blake2b": {
+          "duration": 0.002,
+          "ops_per_sec": 49819.5
+        }
+      },
+      "signature": {
+        "RSA": {
+          "sign_ops_per_sec": 1084.93,
+          "verify_ops_per_sec": 16632.84
+        },
+        "ECDSA": {
+          "sign_ops_per_sec": 95672.99,
+          "verify_ops_per_sec": 3807.95
+        }
+      }
+    }
+  ]
+}
